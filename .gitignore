@@ -1,1 +1,6 @@
 node_modules/*
+allure-report/*
+allure-results/*
+runner-results/*
+cypress/parallel-weights.json
+multi-reporter-config.json
