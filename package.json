@@ -6,15 +6,14 @@
   "scripts": {
     "limpiar-reporte": "rimraf ./allure-report && rimraf ./allure-results",
     "ejecutar-todas-las-pruebas": "cypress run --headed --env allure=true",
-    "ejecutar-caso-prueba-especifico": "cypress run --headed --env allure=true --spec \"cypress/e2e/tests/autenticacion.cy.js",
+    "ejecutar-caso-prueba-especifico": "cypress run --headed --env allure=true --spec \"cypress/integration/features/autenticacion.feature",
     "ejecutar-sin-interfaz-grafica": "cypress run --env allure=true",
     "generar-reporte": "allure generate allure-results -o allure-report --clean",
     "abrir-reporte": "allure open",
     "test": "npm run limpiar-reporte && npm run ejecutar-todas-las-pruebas & npm run generar-reporte && npm run abrir-reporte",
     "test2": "npm run limpiar-reporte && npm run ejecutar-caso-prueba-especifico & npm run generar-reporte && npm run abrir-reporte",
     "test3-nube": "npm run limpiar-reporte && npm run ejecutar-sin-interfaz-grafica & npm run generar-reporte && npm run abrir-reporte",
-    "cy:parallel":"npm run limpiar-reporte && cypress-parallel -s ejecutar-todas-las-pruebas -t 2 -d ./cypress/e2e/tests & npm run generar-reporte"
-
+    "cy:parallel": "npm run limpiar-reporte && cypress-parallel -s ejecutar-todas-las-pruebas -t 2 -d ./cypress/integration/features & npm run generar-reporte"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +25,11 @@
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.40.2",
     "cypress": "^12.13.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "rimraf": "^5.0.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/integration/stepDefinitions"
   }
 }
