@@ -6,14 +6,10 @@
   "scripts": {
     "limpiar-reporte": "rimraf ./allure-report && rimraf ./allure-results",
     "ejecutar-todas-las-pruebas": "cypress run --headed --env allure=true",
-    "ejecutar-caso-prueba-especifico": "cypress run --headed --env allure=true --spec \"cypress/integration/features/autenticacion.feature",
-    "ejecutar-sin-interfaz-grafica": "cypress run --env allure=true",
     "generar-reporte": "allure generate allure-results -o allure-report --clean",
     "abrir-reporte": "allure open",
-    "test": "npm run limpiar-reporte && npm run ejecutar-todas-las-pruebas & npm run generar-reporte && npm run abrir-reporte",
-    "test2": "npm run limpiar-reporte && npm run ejecutar-caso-prueba-especifico & npm run generar-reporte && npm run abrir-reporte",
-    "test3-nube": "npm run limpiar-reporte && npm run ejecutar-sin-interfaz-grafica & npm run generar-reporte && npm run abrir-reporte",
-    "cy:parallel": "npm run limpiar-reporte && cypress-parallel -s ejecutar-todas-las-pruebas -t 2 -d ./cypress/integration/features & npm run generar-reporte"
+    "test": "npm run limpiar-reporte && npm run ejecutar-todas-las-pruebas & npm run generar-reporte && npm run abrir-reporte"
+    
   },
   "keywords": [],
   "author": "",
