@@ -85,7 +85,5 @@ Then('La orden se realiza correctamente', () => {
     ThankYouForYourPurchaseMethods.verifyGreenCheckMarkIsDisplayed();
     ThankYouForYourPurchaseMethods.clickOnOkButton();
     HomeMethods.verifyHomePageIsShown();
-    Logger.postCondition('Log Out')
-    CommonPageMethods.logOut();
 
 })

@@ -5,18 +5,20 @@
   "main": "index.js",
   "scripts": {
     "limpiar-reporte": "rimraf ./allure-report && rimraf ./allure-results",
-    "ejecutar-todas-las-pruebas": "cypress run --headed --env allure=true",
+    "ejecutar-pruebas-web": "cypress run --headed --env allure=true",
+    "ejecutar-pruebas-api": "cypress run --headed --env allure=true --spec cypress/e2e/api",
     "generar-reporte": "allure generate allure-results -o allure-report --clean",
     "abrir-reporte": "allure open",
-    "test": "npm run limpiar-reporte && npm run ejecutar-todas-las-pruebas & npm run generar-reporte && npm run abrir-reporte"
-    
+    "test-web": "npm run limpiar-reporte && npm run ejecutar-pruebas-web & npm run generar-reporte && npm run abrir-reporte",
+    "test-api": "npm run limpiar-reporte && npm run ejecutar-pruebas-api & npm run generar-reporte && npm run abrir-reporte"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "allure-commandline": "^2.27.0",
-    "cypress-parallel": "^0.14.0"
+    "cypress-parallel": "^0.14.0",
+    "cypress-plugin-api": "^2.11.2"
   },
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.40.2",
