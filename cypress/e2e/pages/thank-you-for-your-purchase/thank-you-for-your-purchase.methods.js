@@ -2,7 +2,7 @@ import { ThankYouForYourPurchaseElements } from "./thank-yo-for-your-purchase.el
 
 export class ThankYouForYourPurchaseMethods {
     static clickOnOkButton(){
-        cy.wait(1000)
+        cy.wait(2000)
         ThankYouForYourPurchaseElements.buttons.ok.click();
     }
     static verifyGreenCheckMarkIsDisplayed(){

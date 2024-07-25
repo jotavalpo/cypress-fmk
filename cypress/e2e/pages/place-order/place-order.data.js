@@ -1,12 +1,12 @@
 export class PlaceOrderData {
     static get testData(){
         return{
-            name: 'Test name',
-            country: 'United States',
-            city: 'Boston',
+            name: 'Jorge Montero',
+            country: 'Chile',
+            city: 'Santiago',
             creditCardNumber: 4263982640269299,
-            month: '02',
-            year: 2026
+            month: '12',
+            year: 2029
         }
     }
 }

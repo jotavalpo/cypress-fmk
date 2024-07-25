@@ -6,22 +6,21 @@
   "scripts": {
     "limpiar-reporte": "rimraf ./allure-report && rimraf ./allure-results",
     "ejecutar-todas-las-pruebas": "cypress run --headed --env allure=true",
-    "ejecutar-caso-prueba-especifico": "cypress run --headed --env allure=true --spec \"cypress/e2e/tests/autenticacion.cy.js",
-    "ejecutar-sin-interfaz-grafica": "cypress run --env allure=true",
+    "ejecutar-casos-de-prueba-api": "cypress run --headed --env allure=true --spec \"cypress/e2e/api/*.cy.js",
+    "ejecutar-casos-de-prueba-web": "cypress run --headed --env allure=true --spec \"cypress/e2e/tests/catalogo-y-compras.cy.js",
     "generar-reporte": "allure generate allure-results -o allure-report --clean",
     "abrir-reporte": "allure open",
-    "test": "npm run limpiar-reporte && npm run ejecutar-todas-las-pruebas & npm run generar-reporte && npm run abrir-reporte",
-    "test2": "npm run limpiar-reporte && npm run ejecutar-caso-prueba-especifico & npm run generar-reporte && npm run abrir-reporte",
-    "test3-nube": "npm run limpiar-reporte && npm run ejecutar-sin-interfaz-grafica & npm run generar-reporte && npm run abrir-reporte",
-    "cy:parallel":"npm run limpiar-reporte && cypress-parallel -s ejecutar-todas-las-pruebas -t 2 -d ./cypress/e2e/tests & npm run generar-reporte"
-
+    "test-api": "npm run limpiar-reporte && npm run ejecutar-casos-de-prueba-api & npm run generar-reporte && npm run abrir-reporte",
+    "test-web": "npm run limpiar-reporte && npm run ejecutar-casos-de-prueba-web & npm run generar-reporte && npm run abrir-reporte",
+    "probar-todo": "npm run limpiar-reporte && npm run ejecutar-todas-las-pruebas & npm run generar-reporte && npm run abrir-reporte"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "allure-commandline": "^2.27.0",
-    "cypress-parallel": "^0.14.0"
+    "cypress-parallel": "^0.14.0",
+    "cypress-plugin-api": "^2.11.2"
   },
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.40.2",

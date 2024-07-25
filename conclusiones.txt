@@ -1,0 +1,51 @@
+# Conclusiones al usar Cypress
+
+
+1. No fue posible mezclar automatización web usando cucumber y apis en el mismo proyecto. Esto debido al uso de specPattern
+que no permitió indicar ruta de stepDefinitions y ruta de apis en conjunto, por lo que se optó por usar los flujos web
+con logger para ordenar su ejecución
+
+
+2. La versión 13 (actual) falla allure (no genera evidencias para reporte), además no reconoce comandos cypress (run)
+
+Soluciones:
+
+- Eliminar caché de carpeta \AppData\
+
+- borrar carpeta node_modules del proyecto
+
+- instalar cypress 12 con npm install cypress@12.13.0
+
+
+3. Commandos no encontrados, por ejemplo, cypress -v o allure-report. Esto ocurre cuando estos paquetes no están instalados de manera global
+
+Solucion:
+
+- Ejecutar en la consola:
+    
+    npm install cypress@12.13.0 -g (instala una versión específica globalmente)
+    
+    npm install --location=global
+    
+    npm install allure-command-line -g (instala la consola de allure para ejecutar comandos de manera global)
+    
+    npm install --location=global
+
+
+4. Tips para el uso de git
+
+- Para no agregar otro commit nuevo con cambio sin editar texto (en caso de ajustar algo que le falto a commit anterior), usar:
+    
+    git commit --amend --no-edit
+
+- Para modificar comentario de commit anterior
+    
+    git commit --amend -m "an updated commit message"
+
+
+5. Para algunas expresiones donde no se permite comillas simples y se debe usar el simbolo "`", el cual se logra así:
+    
+    tecla "ALT GR" + tecla "]}"
+
+
+6. Para poner comillas dobles dentro de otras comillas dobles, usar backslach antes de comillas dobles
